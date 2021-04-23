@@ -25,7 +25,7 @@ onready var cris_sounds= [$Barbare/Audio_cris/cris1, $Barbare/Audio_cris/cris2, 
 
 
 var score = 0
-# lettres
+# liste des lettres tirées
 var current_letter
 var current_letter_code
 var letters      = ["Q"  , "S"  , "D"  , "F"  , "J"  , "K"  , "L"  , "M"  , "G"  , "H"  ,\
