@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/perso_bad.svg.png-1c8fcb9950a720356be939682262fe8b.stex"
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[node name="Monstre" type="AnimatedSprite"]
+position = Vector2( 2.8284, 0 )
+frames = SubResource( 2 )
+animation = "idle"

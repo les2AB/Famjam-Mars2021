@@ -1,0 +1,35 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="Jeux #1 - Avril 2021"
+config/description="Inspiré de KidPaddle/GameOver, un jeu créé lors du FamJam numéro 1.
+Avril 2021"
+run/main_scene="res://scenes/world.tscn"
+config/icon="res://ico.png"
+
+[display]
+
+window/size/width=800
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://default_env.tres"

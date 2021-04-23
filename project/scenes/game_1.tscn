@@ -1,0 +1,194 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://scripts/game_1.gd" type="Script" id=1]
+[ext_resource path="res://assets/img/game_1/sprites_Barbare/barbarian1.png" type="Texture" id=2]
+[ext_resource path="res://assets/themes/world_theme.tres" type="Theme" id=3]
+[ext_resource path="res://assets/fonts/joystix monospace.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/img/loader_1/splash_gameOver.png" type="Texture" id=5]
+[ext_resource path="res://assets/sounds/game_1/musique.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/sounds/game_1/aïe5.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/sounds/game_1/coups1.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/sounds/game_1/aïe4.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/sounds/game_1/aïe2.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/sounds/game_1/coups3.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/sounds/game_1/coups6.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/img/game_1/sprites_Barbare/barbarian0.png" type="Texture" id=13]
+[ext_resource path="res://assets/sounds/game_1/coups5.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/sounds/game_1/aïe3.wav" type="AudioStream" id=15]
+[ext_resource path="res://assets/sounds/game_1/aïe1.wav" type="AudioStream" id=16]
+[ext_resource path="res://assets/img/game_1/sprites_Barbare/barbarian3.png" type="Texture" id=17]
+[ext_resource path="res://assets/img/game_1/background.jpg" type="Texture" id=18]
+[ext_resource path="res://assets/sounds/game_1/coups7.wav" type="AudioStream" id=19]
+[ext_resource path="res://assets/sounds/game_1/coups2.wav" type="AudioStream" id=20]
+[ext_resource path="res://assets/img/game_1/sprites_Barbare/barbarian2.png" type="Texture" id=21]
+[ext_resource path="res://assets/sounds/game_1/aïe6.wav" type="AudioStream" id=22]
+[ext_resource path="res://assets/sounds/game_1/coups4.wav" type="AudioStream" id=23]
+[ext_resource path="res://assets/img/game_1/sprites_Barbare/barbarian4.png" type="Texture" id=24]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 13 ) ],
+"loop": false,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 2 ), ExtResource( 21 ), ExtResource( 17 ), ExtResource( 24 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 2 ), ExtResource( 13 ) ],
+"loop": false,
+"name": "attack",
+"speed": 30.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 38.9716
+height = 19.3021
+
+[sub_resource type="DynamicFont" id=3]
+size = 100
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+outline_size = 2
+font_data = ExtResource( 4 )
+
+[node name="Node" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Barbare" type="Area2D" parent="."]
+position = Vector2( 150, 310 )
+
+[node name="Animation" type="AnimatedSprite" parent="Barbare"]
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 1 )
+animation = "idle"
+centered = false
+
+[node name="Audio_kicks" type="Node" parent="Barbare"]
+
+[node name="coups1" type="AudioStreamPlayer" parent="Barbare/Audio_kicks"]
+stream = ExtResource( 8 )
+
+[node name="coups2" type="AudioStreamPlayer" parent="Barbare/Audio_kicks"]
+stream = ExtResource( 20 )
+
+[node name="coups3" type="AudioStreamPlayer" parent="Barbare/Audio_kicks"]
+stream = ExtResource( 11 )
+
+[node name="coups4" type="AudioStreamPlayer" parent="Barbare/Audio_kicks"]
+stream = ExtResource( 23 )
+
+[node name="coups5" type="AudioStreamPlayer" parent="Barbare/Audio_kicks"]
+stream = ExtResource( 14 )
+
+[node name="coups6" type="AudioStreamPlayer" parent="Barbare/Audio_kicks"]
+stream = ExtResource( 12 )
+
+[node name="coups7" type="AudioStreamPlayer" parent="Barbare/Audio_kicks"]
+stream = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barbare"]
+position = Vector2( 50.5284, 53.4348 )
+shape = SubResource( 2 )
+
+[node name="Audio_cris" type="Node" parent="Barbare"]
+
+[node name="cris1" type="AudioStreamPlayer" parent="Barbare/Audio_cris"]
+stream = ExtResource( 16 )
+volume_db = -10.0
+
+[node name="cris2" type="AudioStreamPlayer" parent="Barbare/Audio_cris"]
+stream = ExtResource( 10 )
+volume_db = -10.0
+
+[node name="cris3" type="AudioStreamPlayer" parent="Barbare/Audio_cris"]
+stream = ExtResource( 15 )
+volume_db = -10.0
+
+[node name="cris4" type="AudioStreamPlayer" parent="Barbare/Audio_cris"]
+stream = ExtResource( 9 )
+volume_db = -10.0
+
+[node name="cris5" type="AudioStreamPlayer" parent="Barbare/Audio_cris"]
+stream = ExtResource( 7 )
+volume_db = -10.0
+
+[node name="cris6" type="AudioStreamPlayer" parent="Barbare/Audio_cris"]
+stream = ExtResource( 22 )
+volume_db = -10.0
+
+[node name="Blork" type="Node2D" parent="."]
+
+[node name="Musique" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -10.0
+
+[node name="Cadre" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Cadre"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -325.0
+margin_bottom = 36.0
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Score : 20000"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Instruction" type="Label" parent="Cadre"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -36.0
+theme = ExtResource( 3 )
+text = "Appuyer sur la bonne touche..."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lettre" type="Label" parent="Cadre"]
+margin_left = 324.653
+margin_top = 61.8388
+margin_right = 407.653
+margin_bottom = 181.839
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Z"
+
+[node name="GameOver" type="TextureRect" parent="Cadre"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 5 )
+
+[node name="Again" type="Label" parent="Cadre"]
+visible = false
+margin_left = 44.0006
+margin_top = 268.761
+margin_right = 374.001
+margin_bottom = 469.761
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Encore
+une petite
+partie ?
+(O/N)"
+[connection signal="body_entered" from="Barbare" to="." method="_on_Barbare_body_entered"]
+[connection signal="animation_finished" from="Barbare/Animation" to="." method="_on_Perso_animation_finished"]

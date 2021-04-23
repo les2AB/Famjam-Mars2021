@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/arcade_KidPaddle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/arcade_BorneJeu1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/sounds/arcade/arcade_music.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/img/arcade/background.jpg" type="Texture" id=4]
+
+[node name="arcade" type="Node2D"]
+modulate = Color( 0.815686, 0.596078, 0.596078, 1 )
+
+[node name="Fond" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="BorneJeu1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 435.249, 292.967 )
+
+[node name="KidPaddle" parent="." instance=ExtResource( 1 )]
+position = Vector2( 127.173, 309.02 )
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -15.0
+autoplay = true
