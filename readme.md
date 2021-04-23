@@ -2,7 +2,7 @@
 
 14 Avril 2021 - Jeu FamJam par la famille **Bouboupad**
 
-[Jouer maintenant !](https://pskalou.github.io/famjam1)
+[Jouer maintenant !](https://les2ab.github.io/Famjam-Mars2021)
   
 
 Un coup d'œil sur [nos autres jeux](https://les2ab.github.io/).
